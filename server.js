@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, './client')));
 app.use('/', routes);
 
 const port = process.env.PORT || 3000;
