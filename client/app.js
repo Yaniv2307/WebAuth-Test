@@ -20,11 +20,12 @@ $(document).ready(() => {
     }
 
     async function CreateCredential() {
+        console.log("host name: ", window.location.hostname);
         const publicKeyCredentialCreationOptions = {
             challenge: new Uint8Array([117, 61,252, 231, 191, 241]), //Uint8Array.from(randomStringFromServer, c => c.charCodeAt(0)),
             rp: { 
-              id: "acme.com", 
-              name: "ACME Corporation" 
+              name: "test",
+              id: window.location.hostname,
             },
             user: {
               id: new Uint8Array([117, 61,252, 231, 191, 241]), //Uint8Array.from("UZSL85T9AFC", c => c.charCodeAt(0)),
